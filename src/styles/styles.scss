@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Roboto+Slab:wght@700&family=Space+Mono&display=swap');
+
+$kumbhSansFont: 'Kumbh Sans', sans-serif;
+$robotoSlabFont: 'Roboto Slab', serif;
+$spaceMonoFont: 'Space Mono', monospace;
+$orangeColor: rgba(248, 112, 112, 1);
+$lightGreenColor: rgba(112, 243, 248, 1);
+$purpleColor: rgba(216, 129, 248, 1);
+$greyColor: rgba(215, 224, 255, 1);
+$lightGreyColor: rgba(239, 241, 250, 1);
+$whiteColor: rgba(255, 255, 255, 1);
+$bodyBackground: rgba(30, 33, 63, 1);
+$menuBackground: rgba(22, 25, 50, 1);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $kumbhSansFont;
+  font-weight: 700;
+  background-color: $bodyBackground;
+}
+
+.container {
+  max-width: 458px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
