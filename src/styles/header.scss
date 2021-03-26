@@ -17,3 +17,46 @@
   text-align: center;
   margin-bottom: 55px;
 }
+
+.menu {
+  margin: 0 auto;
+  padding: 7px;
+  max-width: 373px;
+  height: 63px;
+  background-color: $menuBackground;
+  border: none;
+  border-radius: 31.5px;
+  outline: none;
+  display: flex;
+
+  &__item {
+    list-style: none;
+    width: 33.33%;
+  }
+
+  &__link,
+  &__link-active {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: rgba(215, 224, 255, 0.5);
+    font-size: 14px;
+    line-height: 49px;
+    width: 100%;
+    border-radius: 26.5px;
+    transition: 0.3s;
+
+    &:hover {
+      color: rgba(215, 224, 255, 1);
+    }
+  }
+
+  &__link-active {
+    color: rgba(30, 33, 63, 1);
+    background-color: $orangeColor;
+
+    &:hover {
+      color: rgba(30, 33, 63, 1);
+    }
+  }
+}
