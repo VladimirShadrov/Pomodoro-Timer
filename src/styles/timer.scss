@@ -1,0 +1,130 @@
+@import './styles.scss';
+
+.timer {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+  background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+  margin-bottom: 63px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+
+  &__time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    font-weight: 700;
+    color: $greyColor;
+    text-align: center;
+    letter-spacing: -5px;
+    z-index: 1;
+  }
+
+  &__button,
+  &__button-color {
+    display: block;
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    padding-left: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $greyColor;
+    transition: 0.3s;
+    z-index: 1;
+
+    &:hover {
+      color: $orangeColor;
+    }
+  }
+
+  &__progress-container {
+    max-width: 366px;
+    max-height: 366px;
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+  }
+
+  &__progress-bacground {
+    fill: $menuBackground;
+  }
+
+  &__progress-bar {
+    stroke: $orangeColor;
+    stroke-width: 9;
+    stroke-linecap: round;
+    stroke-dasharray: 1036.2;
+    stroke-dashoffset: 265;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+    transition: 1s;
+    fill: none;
+  }
+}
+
+.settings {
+  display: block;
+  width: 28px;
+  height: 28px;
+  transition: 0.3s;
+  position: relative;
+
+  & > img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+
+  &__icon-active {
+    opacity: 0;
+  }
+
+  &:hover .settings__icon-active {
+    opacity: 1;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 767px) {
+  .timer {
+    margin-bottom: 144px;
+  }
+}
+
+@media (max-width: 450px) {
+  .timer {
+    width: 91.7%;
+    margin-bottom: 79px;
+  }
+
+  .timer__time {
+    font-size: 75px;
+  }
+
+  .timer__button,
+  .timer__button-color {
+    font-size: 14px;
+    letter-spacing: 13.13px;
+  }
+}
