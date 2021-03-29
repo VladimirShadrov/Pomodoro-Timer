@@ -14,6 +14,11 @@
   padding: 0 24px;
 }
 
+.modal-hide {
+  transform: translateY(100vh);
+  transition: 0.3s;
+}
+
 .modal {
   width: 100%;
   max-width: 540px;
@@ -24,7 +29,7 @@
   font-weight: 700;
   color: rgba(22, 25, 50, 1);
   margin-top: 155px;
-  transform: translateY(100vh);
+  transition: 0.3s;
 
   &__header {
     padding: 34px 40px 31px 40px;

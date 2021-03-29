@@ -16,7 +16,7 @@ body {
 .container {
   max-width: 458px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 48px 24px 0 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,7 +42,7 @@ body {
 .container {
   max-width: 458px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 48px 24px 0 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,7 +129,7 @@ body {
 .container {
   max-width: 458px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 48px 24px 0 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -286,7 +286,7 @@ body {
 .container {
   max-width: 458px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 48px 24px 0 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,6 +317,14 @@ body {
           align-items: flex-start;
   padding: 0 24px; }
 
+.modal-hide {
+  -webkit-transform: translateY(100vh);
+      -ms-transform: translateY(100vh);
+          transform: translateY(100vh);
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
 .modal {
   width: 100%;
   max-width: 540px;
@@ -327,9 +335,9 @@ body {
   font-weight: 700;
   color: #161932;
   margin-top: 155px;
-  -webkit-transform: translateY(100vh);
-      -ms-transform: translateY(100vh);
-          transform: translateY(100vh); }
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
   .modal__header {
     padding: 34px 40px 31px 40px;
     border-bottom: 1px solid rgba(22, 25, 50, 0.1);

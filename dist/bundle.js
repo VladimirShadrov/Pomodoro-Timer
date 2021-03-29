@@ -35,6 +35,54 @@ eval("\n\n__webpack_require__(/*! core-js/es6 */ \"../node_modules/core-js/es6/i
 
 /***/ }),
 
+/***/ "./js/components/menu.js":
+/*!*******************************!*\
+  !*** ./js/components/menu.js ***!
+  \*******************************/
+/*! namespace exports */
+/*! export Menu [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Menu\": function() { return /* binding */ Menu; }\n/* harmony export */ });\n/* harmony import */ var _helpers_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/helpers */ \"./js/helpers/helpers.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\nvar Menu = /*#__PURE__*/function () {\n  function Menu(el) {\n    _classCallCheck(this, Menu);\n\n    this.el = el;\n    this.menuItems = Array.from(this.el.querySelectorAll('.menu__link'));\n    this.setItemToStorage = _helpers_helpers__WEBPACK_IMPORTED_MODULE_0__.setItemToStorage;\n    this.getItemFromStorage = _helpers_helpers__WEBPACK_IMPORTED_MODULE_0__.getItemFromStorage;\n    this.init();\n    this.setMenuItemClassActive();\n  }\n\n  _createClass(Menu, [{\n    key: \"init\",\n    value: function init() {\n      var _this = this;\n\n      this.menuItems.forEach(function (item) {\n        item.addEventListener('click', menuItemclickHendler.bind(_this));\n      });\n    }\n  }, {\n    key: \"setMenuItemClassActive\",\n    value: function setMenuItemClassActive() {\n      var itemFromStorage = this.getItemFromStorage('activeMenuItem');\n      var activeMenuItem = this.menuItems.find(function (item) {\n        return item.dataset.id === itemFromStorage;\n      });\n      this.menuItems.forEach(function (menuItem) {\n        menuItem.classList.remove('menu__link-active');\n      });\n\n      if (!activeMenuItem) {\n        this.menuItems[0].classList.add('menu__link-active');\n      } else {\n        activeMenuItem.classList.add('menu__link-active');\n      }\n    }\n  }]);\n\n  return Menu;\n}();\n\nfunction menuItemclickHendler(event) {\n  if (event.target.classList.contains('menu__link')) {\n    this.menuItems.forEach(function (item) {\n      return item.classList.remove('menu__link-active');\n    });\n    event.target.classList.add('menu__link-active');\n    this.setItemToStorage('activeMenuItem', event.target.dataset.id);\n  }\n}\n\n//# sourceURL=webpack:///./js/components/menu.js?");
+
+/***/ }),
+
+/***/ "./js/components/settings.js":
+/*!***********************************!*\
+  !*** ./js/components/settings.js ***!
+  \***********************************/
+/*! namespace exports */
+/*! export Settings [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Settings\": function() { return /* binding */ Settings; }\n/* harmony export */ });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Settings = /*#__PURE__*/function () {\n  function Settings(el) {\n    _classCallCheck(this, Settings);\n\n    this.el = el;\n    this.overlay = this.el.querySelector('.overlay');\n    this.settingsModal = this.el.querySelector('.modal');\n    this.init();\n  }\n\n  _createClass(Settings, [{\n    key: \"init\",\n    value: function init() {\n      this.el.addEventListener('click', settingsClickHendler.bind(this));\n    }\n  }, {\n    key: \"showSettingsWindow\",\n    value: function showSettingsWindow() {\n      this.overlay.style.zIndex = '10';\n      this.settingsModal.classList.remove('modal-hide');\n    }\n  }, {\n    key: \"hideSettingsWindow\",\n    value: function hideSettingsWindow() {\n      var _this = this;\n\n      this.settingsModal.classList.add('modal-hide');\n      setTimeout(function () {\n        return _this.overlay.style.zIndex = '-1';\n      }, 300);\n    }\n  }]);\n\n  return Settings;\n}();\n\nfunction settingsClickHendler(event) {\n  if (event.target.classList.contains('settings__settings-link')) {\n    this.showSettingsWindow();\n  }\n\n  if (event.target.dataset.id === 'close-settings' || event.target.classList.contains('overlay')) {\n    this.hideSettingsWindow();\n  }\n}\n\n//# sourceURL=webpack:///./js/components/settings.js?");
+
+/***/ }),
+
+/***/ "./js/helpers/helpers.js":
+/*!*******************************!*\
+  !*** ./js/helpers/helpers.js ***!
+  \*******************************/
+/*! namespace exports */
+/*! export getItemFromStorage [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export getObjectFromStorage [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export setItemToStorage [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export setObjectToStorage [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"setItemToStorage\": function() { return /* binding */ setItemToStorage; },\n/* harmony export */   \"getItemFromStorage\": function() { return /* binding */ getItemFromStorage; },\n/* harmony export */   \"setObjectToStorage\": function() { return /* binding */ setObjectToStorage; },\n/* harmony export */   \"getObjectFromStorage\": function() { return /* binding */ getObjectFromStorage; }\n/* harmony export */ });\nfunction setItemToStorage(key, item) {\n  localStorage.setItem(key, item);\n}\nfunction getItemFromStorage(key) {\n  var item = localStorage.getItem(key);\n  return item;\n}\nfunction setObjectToStorage(key, object) {\n  localStorage.setItem(key, JSON.stringify(object));\n}\nfunction getObjectFromStorage(key) {\n  var item = JSON.parse(localStorage.getItem(key));\n  return item;\n}\n\n//# sourceURL=webpack:///./js/helpers/helpers.js?");
+
+/***/ }),
+
 /***/ "./js/index.js":
 /*!*********************!*\
   !*** ./js/index.js ***!
@@ -45,7 +93,7 @@ eval("\n\n__webpack_require__(/*! core-js/es6 */ \"../node_modules/core-js/es6/i
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.scss */ \"./styles/styles.scss\");\n/* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/header.scss */ \"./styles/header.scss\");\n/* harmony import */ var _styles_timer_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/timer.scss */ \"./styles/timer.scss\");\n/* harmony import */ var _styles_settings_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/settings.scss */ \"./styles/settings.scss\");\n\n\n\n // Перенос изображений в папку Dist\n\n__webpack_require__(\"./images sync recursive \\\\.(png|jpg|svg|gif)$\");\n\n//# sourceURL=webpack:///./js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.scss */ \"./styles/styles.scss\");\n/* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/header.scss */ \"./styles/header.scss\");\n/* harmony import */ var _styles_timer_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/timer.scss */ \"./styles/timer.scss\");\n/* harmony import */ var _styles_settings_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/settings.scss */ \"./styles/settings.scss\");\n/* harmony import */ var _components_menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/menu */ \"./js/components/menu.js\");\n/* harmony import */ var _components_settings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/settings */ \"./js/components/settings.js\");\n\n\n\n\n\n // import { saveMenuItem } from './data';\n// Перенос изображений в папку Dist\n\n__webpack_require__(\"./images sync recursive \\\\.(png|jpg|svg|gif)$\");\n\nvar menu = document.querySelector('.menu');\nvar settings = document.querySelector('.settings');\nnew _components_menu__WEBPACK_IMPORTED_MODULE_4__.Menu(menu);\nnew _components_settings__WEBPACK_IMPORTED_MODULE_5__.Settings(settings);\n\n//# sourceURL=webpack:///./js/index.js?");
 
 /***/ }),
 
@@ -4150,6 +4198,18 @@ eval("var map = {\n\t\"./arrow-bottom.svg\": \"./images/arrow-bottom.svg\",\n\t\
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	!function() {
 /******/ 		__webpack_require__.g = (function() {
