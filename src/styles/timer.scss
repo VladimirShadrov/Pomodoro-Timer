@@ -30,8 +30,7 @@
     z-index: 1;
   }
 
-  &__button,
-  &__button-color {
+  &__button {
     display: block;
     position: absolute;
     top: 65%;
@@ -49,6 +48,7 @@
 
     &:hover {
       color: $orangeColor;
+      transition: 0.3s;
     }
   }
 
@@ -80,29 +80,31 @@
 }
 
 .settings {
-  display: block;
-  width: 28px;
-  height: 28px;
-  transition: 0.3s;
-  position: relative;
-
-  & > img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    pointer-events: none;
+  &__settings-link {
+    display: block;
+    width: 28px;
+    height: 28px;
     transition: 0.3s;
+    position: relative;
+
+    & > img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    &:hover .settings__icon-active {
+      opacity: 1;
+      transition: 0.3s;
+    }
   }
 
   &__icon-active {
     opacity: 0;
-  }
-
-  &:hover .settings__icon-active {
-    opacity: 1;
-    transition: 0.3s;
   }
 }
 
@@ -126,5 +128,12 @@
   .timer__button-color {
     font-size: 14px;
     letter-spacing: 13.13px;
+  }
+
+  .timer__progress-container {
+    top: 16.1px;
+    right: 16.1px;
+    bottom: 16.1px;
+    left: 16.1px;
   }
 }
