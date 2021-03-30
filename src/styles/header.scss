@@ -30,6 +30,7 @@
   &__link,
   &__link-active {
     display: block;
+    outline: none;
     text-decoration: none;
     text-align: center;
     color: rgba(215, 224, 255, 0.5);
@@ -46,7 +47,6 @@
 
   &__link-active {
     color: rgba(30, 33, 63, 1);
-    background-color: $orangeColor;
 
     &:hover {
       color: rgba(30, 33, 63, 1);

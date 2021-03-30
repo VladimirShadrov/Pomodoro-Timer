@@ -5,8 +5,6 @@ import '../styles/settings.scss';
 import { Menu } from './components/menu';
 import { Settings } from './components/settings';
 
-// import { saveMenuItem } from './data';
-
 // Перенос изображений в папку Dist
 require.context('../images', true, /\.(png|jpg|svg|gif)$/);
 
