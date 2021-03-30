@@ -23,16 +23,30 @@ export function writeTimerTime(timerValue, userSettings, defaultSettings) {
 
   switch (tabFromStorage) {
     case 'pomodoro':
-      timerValue.textContent =
-        `${userSettings.pomodoroTime}:00` ||
-        `${defaultSettings.pomodoroTime}:00`;
+      timerValue.innerHTML = `
+        <span class="timer__minute">${
+          userSettings.pomodoroTime || defaultSettings.pomodoroTime
+        }</span>
+        <span class="timer__separator">:</span>
+        <span class="timer__seconds">00</span>
+        `;
       break;
     case 'short break':
-      timerValue.textContent =
-        `${userSettings.shortBreak}:00` || `${defaultSettings.shortBreak}:00`;
+      timerValue.innerHTML = `
+        <span class="timer__minute">${
+          userSettings.shortBreak || defaultSettings.shortBreak
+        }</span>
+        <span class="timer__separator">:</span>
+        <span class="timer__seconds">00</span>    
+      `;
       break;
     case 'long break':
-      timerValue.textContent =
-        `${userSettings.longBreak}:00` || `${defaultSettings.longBreak}:00`;
+      timerValue.innerHTML = `
+        <span class="timer__minute">${
+          userSettings.longBreak || defaultSettings.longBreak
+        }</span>
+        <span class="timer__separator">:</span>
+        <span class="timer__seconds">00</span>    
+        `;
   }
 }

@@ -28,10 +28,12 @@
     text-align: center;
     letter-spacing: -5px;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  &__button,
-  &__button-active {
+  &__button {
     display: block;
     outline: none;
     position: absolute;
@@ -47,11 +49,6 @@
     color: $greyColor;
     transition: 0.3s;
     z-index: 1;
-  }
-
-  &__button-active {
-    color: $orangeColor;
-    transition: 0.3s;
   }
 
   &__progress-container {
