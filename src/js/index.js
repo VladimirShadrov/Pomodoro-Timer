@@ -6,8 +6,9 @@ import { Menu } from './components/menu';
 import { Settings } from './components/settings';
 import { Timer } from './components/timer';
 
-// Перенос изображений в папку Dist
+// Перенос изображений и аудио в папку Dist
 require.context('../images', true, /\.(png|jpg|svg|gif)$/);
+require.context('../sound', true, /\.(mp3)$/);
 
 const menu = document.querySelector('.menu');
 const settings = document.querySelector('.settings');

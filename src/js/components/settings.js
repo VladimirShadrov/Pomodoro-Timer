@@ -151,12 +151,17 @@ export class Settings {
     switch (font) {
       case "'Kumbh Sans', sans-serif":
         this.timerTime.style.letterSpacing = '-5px';
+        this.timerTime.style.lineHeight = '100.59px';
         break;
       case "'Roboto Slab', serif":
         this.timerTime.style.letterSpacing = '0';
+        this.timerTime.style.lineHeight = '131.88px';
+
         break;
       case "'Space Mono', monospace":
         this.timerTime.style.letterSpacing = '-10px';
+        this.timerTime.style.lineHeight = '148.1px';
+
         break;
     }
 

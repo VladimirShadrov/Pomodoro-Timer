@@ -3,6 +3,7 @@ import { getItemFromStorage } from '../helpers/helpers';
 import { timerConfig } from '../data/data';
 import { getObjectFromStorage } from '../helpers/helpers';
 import { writeTimerTime } from '../helpers/helpers';
+import { interval } from '../components/timer';
 
 export class Menu {
   constructor(el) {
@@ -47,6 +48,12 @@ function menuItemclickHendler(event) {
   event.preventDefault();
   const userSettings =
     this.userSettings('userSettings') || this.defaultSettings;
+
+  if (!event.target.classList.contains('menu__link-active')) {
+    this.timerTime.nextElementSibling.textContent = 'start';
+    this.timerTime.nextElementSibling.removeAttribute('data-id');
+    clearInterval(interval);
+  }
 
   if (event.target.classList.contains('menu__link')) {
     this.menuItems.forEach((item) => {

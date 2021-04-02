@@ -29,8 +29,40 @@
     letter-spacing: -5px;
     z-index: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    width: 68%;
+  }
+
+  &__minute,
+  &__separator,
+  &__seconds {
+    display: block;
+    transition: 0.3s;
+  }
+
+  &__minute,
+  &__seconds {
+    width: 110px;
+  }
+
+  &__minute {
+    text-align: left;
+  }
+
+  &__seconds {
+    text-align: left;
+  }
+
+  &__separator {
+    width: 55px;
+    text-align: center;
+    letter-spacing: 0;
+  }
+
+  &__separator-transparent {
+    color: transparent;
+    transition: 0.3s;
   }
 
   &__button {
@@ -112,7 +144,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 460px) {
   .timer {
     width: 91.7%;
     margin-bottom: 79px;
@@ -120,6 +152,16 @@
 
   .timer__time {
     font-size: 75px;
+  }
+
+  .timer__separator {
+    width: 35px;
+    text-align: center;
+  }
+
+  .timer__minute,
+  .timer__seconds {
+    width: 83px;
   }
 
   .timer__button,
@@ -135,3 +177,10 @@
     left: 16.1px;
   }
 }
+
+// @media (max-width: 410px) {
+//   .timer__minute,
+//   .timer__seconds {
+//     width: 73px;
+//   }
+// }

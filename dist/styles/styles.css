@@ -180,12 +180,32 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    width: 68%; }
+  .timer__minute, .timer__separator, .timer__seconds {
+    display: block;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+  .timer__minute, .timer__seconds {
+    width: 110px; }
+  .timer__minute {
+    text-align: left; }
+  .timer__seconds {
+    text-align: left; }
+  .timer__separator {
+    width: 55px;
+    text-align: center;
+    letter-spacing: 0; }
+  .timer__separator-transparent {
+    color: transparent;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
   .timer__button {
     display: block;
     outline: none;
@@ -261,12 +281,18 @@ body {
   .timer {
     margin-bottom: 144px; } }
 
-@media (max-width: 450px) {
+@media (max-width: 460px) {
   .timer {
     width: 91.7%;
     margin-bottom: 79px; }
   .timer__time {
     font-size: 75px; }
+  .timer__separator {
+    width: 35px;
+    text-align: center; }
+  .timer__minute,
+  .timer__seconds {
+    width: 83px; }
   .timer__button,
   .timer__button-color {
     font-size: 14px;
