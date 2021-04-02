@@ -52,6 +52,8 @@ function menuItemclickHendler(event) {
   if (!event.target.classList.contains('menu__link-active')) {
     this.timerTime.nextElementSibling.textContent = 'start';
     this.timerTime.nextElementSibling.removeAttribute('data-id');
+    this.timerTime.nextElementSibling.nextElementSibling.lastElementChild.style.strokeDashoffset =
+      '1036.72';
     clearInterval(interval);
   }
 

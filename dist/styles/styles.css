@@ -238,16 +238,12 @@ body {
     stroke-width: 9;
     stroke-linecap: round;
     stroke-dasharray: 1036.2;
-    stroke-dashoffset: 265;
     -webkit-transform-origin: 50% 50%;
         -ms-transform-origin: 50% 50%;
             transform-origin: 50% 50%;
     -webkit-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
             transform: rotate(-90deg);
-    -webkit-transition: 1s;
-    -o-transition: 1s;
-    transition: 1s;
     fill: none; }
 
 .settings__settings-link {
@@ -356,6 +352,11 @@ body {
   -o-transition: 0.3s;
   transition: 0.3s; }
 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
 .modal {
   width: 100%;
   max-width: 540px;
@@ -456,10 +457,7 @@ body {
     font-size: 14px;
     font-weight: 700;
     background-color: #eff1fa;
-    width: 100%;
-    -webkit-appearance: textfield;
-       -moz-appearance: textfield;
-            appearance: textfield; }
+    width: 100%; }
   .modal__arrow-top, .modal__arrow-bottom {
     width: 30px;
     height: 20px;

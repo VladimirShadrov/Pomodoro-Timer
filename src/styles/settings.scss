@@ -19,6 +19,12 @@
   transition: 0.3s;
 }
 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .modal {
   width: 100%;
   max-width: 540px;
@@ -130,7 +136,6 @@
     font-weight: 700;
     background-color: $lightGreyColor;
     width: 100%;
-    appearance: textfield;
   }
 
   &__arrow-top,

@@ -11,15 +11,21 @@ export class Timer {
     this.minutes = this.el.querySelector('.timer__minute');
     this.separator = this.el.querySelector('.timer__separator');
     this.seconds = this.el.querySelector('.timer__seconds');
+    this.progressBar = this.el.querySelector('.timer__progress-bar');
+    this.defaultSettings = timerConfig;
     this.minutesValueForPause;
     this.secondsValueForPause;
     this.userSettings;
-    this.minutesValue;
+    this.minutesValue = this.getTimeValueForTimer();
     this.secondsValue;
+    this.radius;
+    this.progressBarLength;
+    this.progressBarOffset;
 
     this.init();
     this.addHoverEffectToStartButton();
     this.removeHoverEffectFromButton();
+    this.setDashOffset();
   }
 
   init() {
@@ -32,8 +38,9 @@ export class Timer {
   }
 
   getTimeValueForTimer() {
-    const userSettings = getObjectFromStorage('userSettings') || thimerConfig;
-    const activeTab = getItemFromStorage('activeMenuItem');
+    const userSettings =
+      getObjectFromStorage('userSettings') || this.defaultSettings;
+    const activeTab = getItemFromStorage('activeMenuItem') || 'pomodoro';
     let result;
 
     switch (activeTab) {
@@ -85,6 +92,7 @@ export class Timer {
     this.runSeparator();
 
     this.secondsValue--;
+    this.progressBar.style.strokeDashoffset = `${(this.progressBarLength -= this.progressBarOffset)}px`;
 
     if (this.secondsValue === -1) {
       this.secondsValue = 59;
@@ -124,7 +132,7 @@ export class Timer {
 
   playSound() {
     const audio = new Audio();
-    audio.src = '../sound/timer-end.mp3';
+    audio.src = './sound/timer-end.mp3';
     audio.play();
   }
 
@@ -136,6 +144,16 @@ export class Timer {
   stopSeparator() {
     this.separator = this.el.querySelector('.timer__separator');
     this.separator.classList.remove('timer__separator-transparent');
+  }
+
+  setProgressBarLength() {
+    this.radius = this.progressBar.r.baseVal.value;
+    this.progressBarLength = 2 * Math.PI * this.radius;
+    this.progressBarOffset = this.progressBarLength / this.minutesValue / 60;
+  }
+
+  setDashOffset() {
+    this.progressBar.style.strokeDashoffset = '1036.72';
   }
 }
 
@@ -149,6 +167,7 @@ function controlTheTimer(event) {
   ) {
     this.minutesValue = this.getTimeValueForTimer();
     this.secondsValue = 0;
+    this.setProgressBarLength();
     this.startTimer();
     setTimeout(() => (this.startButton.textContent = 'pause'), 10);
   }

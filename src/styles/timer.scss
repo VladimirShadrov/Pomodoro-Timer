@@ -101,10 +101,8 @@
     stroke-width: 9;
     stroke-linecap: round;
     stroke-dasharray: 1036.2;
-    stroke-dashoffset: 265;
     transform-origin: 50% 50%;
     transform: rotate(-90deg);
-    transition: 1s;
     fill: none;
   }
 }
@@ -177,10 +175,3 @@
     left: 16.1px;
   }
 }
-
-// @media (max-width: 410px) {
-//   .timer__minute,
-//   .timer__seconds {
-//     width: 73px;
-//   }
-// }
