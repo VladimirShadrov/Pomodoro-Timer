@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro-VS</title>
+  <link href="styles/styles.css" rel="stylesheet"></head>
+  <body>
+    <div class="container">
+      <!--  Логотип  -->
+      <a href="#" class="logo"> pomodoro </a>
+      <!--  //Логотип  -->
+
+      <!--  Блок навигации  -->
+      <nav class="menu">
+        <a href="#" class="menu__link" data-id="pomodoro">pomodoro</a>
+        <a href="#" class="menu__link" data-id="short break">short break</a>
+        <a href="#" class="menu__link" data-id="long break">long break</a>
+      </nav>
+      <!--  //Блок навигации  -->
+
+      <!--  Таймер  -->
+      <div class="timer">
+        <div class="timer__time">
+          <span class="timer__minute"></span>
+          <span class="timer__separator">:</span>
+          <span class="timer__seconds"></span>
+        </div>
+        <a href="#" class="timer__button">start</a>
+        <svg class="timer__progress-container" viewBox="0 0 366 366">
+          <circle class="timer__progress-bacground" cx="183" cy="183" r="183" />
+          <circle class="timer__progress-bar" cx="183" cy="183" r="165" />
+        </svg>
+      </div>
+
+      <!--  //Таймер  -->
+
+      <!--  Настройки  -->
+      <div class="settings">
+        <a href="#" class="settings__settings-link">
+          <img
+            src="./images/settings.svg"
+            alt="Settings"
+            class="settings__icon"
+          />
+          <img
+            src="./images/settings-active.svg"
+            alt="Settings"
+            class="settings__icon-active"
+          />
+        </a>
+        <div class="overlay">
+          <div class="modal modal-hide">
+            <div class="modal__header">
+              <h3 class="modal__title">Settings</h3>
+              <div class="modal__close-btn" data-id="close-settings"></div>
+            </div>
+            <div class="modal__body">
+              <div class="modal__time">
+                <p class="modal__time-title">TIME (MINUTES)</p>
+                <div class="modal__time-container">
+                  <div class="modal__time-item">
+                    <p class="modal__time-name">pomodoro</p>
+                    <div class="modal__input-wrapper">
+                      <input
+                        class="modal__time-value"
+                        type="number"
+                        step="1"
+                        min="1"
+                        max="99"
+                        value="25"
+                        data-name="pomodoro"
+                      />
+                      <div class="modal__arrow-top" data-id="increase"></div>
+                      <div class="modal__arrow-bottom" data-id="reduce"></div>
+                    </div>
+                  </div>
+                  <div class="modal__time-item">
+                    <p class="modal__time-name">short break</p>
+                    <div class="modal__input-wrapper">
+                      <input
+                        class="modal__time-value"
+                        type="number"
+                        step="1"
+                        min="1"
+                        max="99"
+                        value="5"
+                        data-name="short break"
+                      />
+                      <div class="modal__arrow-top" data-id="increase"></div>
+                      <div class="modal__arrow-bottom" data-id="reduce"></div>
+                    </div>
+                  </div>
+                  <div class="modal__time-item">
+                    <p class="modal__time-name">long break</p>
+                    <div class="modal__input-wrapper">
+                      <input
+                        class="modal__time-value"
+                        type="number"
+                        step="1"
+                        min="1"
+                        max="99"
+                        value="15"
+                        data-name="long break"
+                      />
+                      <div class="modal__arrow-top" data-id="increase"></div>
+                      <div class="modal__arrow-bottom" data-id="reduce"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal__font">
+                <p class="modal__font-title">font</p>
+                <div class="modal__font-container">
+                  <div
+                    class="modal__font-item modal__font-item-active modal__font-kumbh-sans"
+                    data-id="'Kumbh Sans', sans-serif"
+                  >
+                    Aa
+                  </div>
+                  <div
+                    class="modal__font-item modal__font-roboto-slab"
+                    data-id="'Roboto Slab', serif"
+                  >
+                    Aa
+                  </div>
+                  <div
+                    class="modal__font-item modal__font-space-mono"
+                    data-id="'Space Mono', monospace"
+                  >
+                    Aa
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal__color">
+                <p class="modal__color-title">color</p>
+                <div class="modal__color-container">
+                  <div
+                    class="modal__color-item modal__color-item-active"
+                    data-id="rgba(248, 112, 112, 1)"
+                  ></div>
+                  <div
+                    class="modal__color-item"
+                    data-id="rgba(112, 243, 248, 1)"
+                  ></div>
+                  <div
+                    class="modal__color-item"
+                    data-id="rgba(216, 129, 248, 1)"
+                  ></div>
+                </div>
+              </div>
+              <button class="modal__button">Apply</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  //Настройки  -->
+    </div>
+  <script src="bundle.js"></script></body>
+</html>
